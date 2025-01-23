@@ -1,11 +1,1 @@
-{
-  "events": [
-    {
-      "id": "e1",
-      "title": "A dummy event",
-      "date": "2023-02-22",
-      "image": "https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg",
-      "description": "Join this amazing event and connect with fellow developers."
-    }
-  ]
-}
+{"events":[{"title":"Landscape","image":"https://images.pexels.com/photos/371633/pexels-photo-371633.jpeg?cs=srgb&dl=clouds-country-daylight-371633.jpg&fm=jpg","date":"2025-01-23","description":"Some landscape","id":"3ca34d52-f61a-4346-9e3a-6ca8640b806b"},{"title":"A beautiful village edited","image":"https://th.bing.com/th/id/R.ef617141e82529da78de79cc5135cf39?rik=npdzjI4w7xMdkQ&riu=http%3a%2f%2fthewowstyle.com%2fwp-content%2fuploads%2f2015%2f01%2f17_10_2007_0242713001192570506_leonid_afremov-1024x761.jpg&ehk=4n%2fbEioycMDRIdZO5e3iWtoVFzxVhFEoO3MYuc40dd0%3d&risl=&pid=ImgRaw&r=0","date":"2025-01-22","description":"Some pic I got from Internet","id":"9a8b0db0-70c0-4378-b8b7-8c4b51f779ec"},{"id":"e1","title":"A dummy event","date":"2023-02-22","image":"https://blog.hubspot.de/hubfs/Germany/Blog_images/Optimize_Marketing%20Events%20DACH%202021.jpg","description":"Join this amazing event and connect with fellow developers."}]}
