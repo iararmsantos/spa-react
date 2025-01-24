@@ -6,7 +6,6 @@ import EventsList from "../components/EventsList";
 const EventDetail = () => {
   // Use the loader data directly (promises)
   const { event, events } = useRouteLoaderData("event-detail");
-  console.log("🚀 ~ EventDetail ~ event:", event);
 
   return (
     <>
@@ -47,7 +46,6 @@ async function loadEvent(id) {
     );
   } else {
     const responseData = await response.json();
-    console.log("🚀 ~ loadEvent ~ responseData:", responseData);
     return responseData.event;
   }
 }
