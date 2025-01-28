@@ -12,6 +12,11 @@ import EventsLayout from "./pages/EventsLayout";
 import Error from "./pages/Error";
 import { action as saveEventAction } from "./components/EventForm";
 import NewsletterPage, { action as newsletterAction } from "./pages/Newsletter";
+import AuthenticationPage, {
+  action as authAction,
+} from "./pages/Authentication";
+import { action as logoutAction } from "./pages/Logout";
+import { tokenLoader, checkAuthLoader } from "./util/auth";
 
 // Challenge / Exercise
 
@@ -40,8 +45,16 @@ const router = createBrowserRouter([
     path: "/",
     element: <RootLayout />,
     errorElement: <Error />,
+    id: "root",
+    loader: tokenLoader,
     children: [
       { index: true, element: <Home /> },
+      {
+        path: "auth",
+        element: <AuthenticationPage />,
+        action: authAction,
+      },
+      { path: "logout", action: logoutAction },
       {
         path: "events",
         element: <EventsLayout />,
@@ -61,10 +74,20 @@ const router = createBrowserRouter([
                 element: <EventDetail />,
                 action: deleteEventAction,
               },
-              { path: "edit", element: <EditEvent />, action: saveEventAction },
+              {
+                path: "edit",
+                element: <EditEvent />,
+                action: saveEventAction,
+                loader: checkAuthLoader,
+              },
             ],
           },
-          { path: "new", element: <NewEvent />, action: saveEventAction },
+          {
+            path: "new",
+            element: <NewEvent />,
+            action: saveEventAction,
+            loader: checkAuthLoader,
+          },
         ],
       },
       {

@@ -2,6 +2,7 @@ import React, { Suspense } from "react";
 import EventItem from "../components/EventItem";
 import { Await, redirect, useRouteLoaderData } from "react-router-dom";
 import EventsList from "../components/EventsList";
+import { getAuthToken } from "../util/auth";
 
 const EventDetail = () => {
   // Use the loader data directly (promises)
@@ -79,9 +80,13 @@ export function loader({ params }) {
 
 export async function action({ params, request }) {
   const eventId = params.eventId;
+  const token = getAuthToken();
 
   const response = await fetch("http://localhost:8080/events/" + eventId, {
     method: request.method,
+    headers: {
+      Authorization: "Bearer " + token,
+    },
   });
 
   if (!response.ok) {

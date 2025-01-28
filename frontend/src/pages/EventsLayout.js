@@ -6,7 +6,6 @@ const EventsLayout = () => {
   return (
     <>
       <EventsNavigation />
-
       <Outlet />
     </>
   );
