@@ -36,7 +36,7 @@ const EventDetail = () => {
 export default EventDetail;
 
 async function loadEvent(id) {
-  const response = await fetch(`http://localhost:8080/events/${id}`);
+  const response = await fetch("http://localhost:8080/events/" + id);
 
   if (!response.ok) {
     throw new Response(
@@ -47,6 +47,7 @@ async function loadEvent(id) {
     );
   } else {
     const responseData = await response.json();
+    console.log({ responseData });
     return responseData.event;
   }
 }
@@ -70,10 +71,10 @@ async function loadEvents() {
 }
 
 //react router call the function and pass an object
-export function loader({ params }) {
+export async function loader({ params }) {
   const id = params.eventId;
   return {
-    event: loadEvent(id), // This returns a promise
+    event: await loadEvent(id), // This returns a promise
     events: loadEvents(), // This also returns a promise
   };
 }
